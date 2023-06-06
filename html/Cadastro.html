@@ -5,10 +5,11 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="img/logoRemasterizado.png">
-  <title>TuneBox Music | Cadastro</title>
+  <link rel="icon" href="../img/logoRemasterizado.png">
+  <title>TuneBox Music | Login</title>
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/Cadastro.css">
+  <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -16,16 +17,16 @@
     <div class="fixed">
       <nav>
         <a class="logo" href="index.html">TuneBox</a>
-      
+
+
+        <div id="videosContainer"></div>
         <div class="mobile-menu">
           <div class="line1"></div>
           <div class="line2"></div>
           <div class="line3"></div>
         </div>
-        
         <ul class="nav-list">
           <li><a href="../html/index.html">Inicio</a></li>
-          <li><a href="../html/Login.html">Login</a></li>
           <li><a href="../html/Sobre.html">Sobre</a></li>
           <li><a href="../html/Premiun.html">Premiun</a></li>
         </ul>
@@ -33,117 +34,104 @@
     </div>
   </header>
 
-  <main>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    v
-    v
-    <p>kas</p>
-    v
-    <p>kas</p>
-    <p>kas</p>
+  <div class="background"></div>
 
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
+  <div class="container">
+    <div class="content">
+      <h2 class="logo"><i class='bx bx-play-circle' ></i>TuneBox</h2>
 
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
-    v
-    v
-    <p>kas</p>
-    v
-    <p>kas</p>
-    <p>kas</p>
+      <div class="text-sci">
+        <h2>Bem-Vindo! <br> <span>Ao Nosso Website</span></h2>
 
-    <p>kas</p>
-    <p>kas</p>
-    <p>kas</p>
+        <p>Desbloqueie seu potencial e mergulhe na experiência!</p>
+      
 
-  </main>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/weslley-gabriel-2b6727187/" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
+        <a href="#"><i class='bx bxl-facebook-square'></i></a>
+        <a href="https://instagram.com/weslleysousaa_" target="_blank"><i class='bx bxl-instagram'></i></a>
+        <a href="https://t.me/WeslleyGabriel05" target="_blank"><i class='bx bxl-telegram' ></i></a>
+      </div>
+    </div>
+  </div>
 
-  <script src="../mobile-navbar.js"></script>
-  <script>
-    const API_KEY = 'AIzaSyC2CuhUJObPDN0kaYo0vBTv0-jw47jEQjk';
+      <div class="logreg-box">
 
-    function realizarPesquisa() {
-      const termoPesquisa = document.getElementById('termoPesquisa').value;
-      const videosContainer = document.getElementById('videosContainer');
+        <div class="form-box register">
+          <form action="#">
+            <h2>Cadastre-se</h2>
 
-      fetch(`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&q=${termoPesquisa}`)
-        .then(response => response.json())
-        .then(data => {
-          const videos = data.items;
-          videosContainer.innerHTML = '';
+            <div class="input-box">
+              <span class="icon"><i class='bx bxs-user' ></i></span>
+              <input type="text" required>
+              <label>Nome</label>
+            </div>
 
-          videos.forEach(video => {
-            const videoElement = document.createElement('div');
-            videoElement.innerHTML = `
+            <div class="input-box">
+              <span class="icon"><i class='bx bxs-envelope' ></i></span>
+              <input type="email" required>
+              <label>E-mail</label>
+            </div>
+
+            <div class="input-box">
+              <span class="icon"><i class='bx bxs-lock-alt' ></i></span>
+              <input type="password" required>
+              <label>Senha</label>
+            </div>
+
+            <div class="remember-forgot">
+              <label><input type="checkbox">Aceito os termos & condições
+              </label>
+              
+            </div>
+
+            <button type="submit" class="btn">Entrar</button>
+
+            <div class="login-register">
+              <p>Já tem uma conta? <a href="../html/Login.html" class="login-link"> Entrar</a></p>
+            </div>
+
+          </form>
+        </div>
+      
+      </div>
+    </div>
+  
+    
+
+    <script src="../mobile-navbar.js"></script>
+
+    <script src="../Form.js"></script>
+
+    <script>
+      const API_KEY = 'AIzaSyC2CuhUJObPDN0kaYo0vBTv0-jw47jEQjk';
+
+      function realizarPesquisa() {
+        const termoPesquisa = document.getElementById('termoPesquisa').value;
+        const videosContainer = document.getElementById('videosContainer');
+
+        fetch(`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&q=${termoPesquisa}`)
+          .then(response => response.json())
+          .then(data => {
+            const videos = data.items;
+            videosContainer.innerHTML = '';
+
+            videos.forEach(video => {
+              const videoElement = document.createElement('div');
+              videoElement.innerHTML = `
                 <h3>${video.snippet.title}</h3>
                 <p>${video.snippet.description}</p>
                 <iframe width="460" height="245" src="https://www.youtube.com/embed/${video.id.videoId}" title="${video.snippet.title}" frameborder="0" allowfullscreen></iframe>
               `;
 
-            videosContainer.appendChild(videoElement);
+              videosContainer.appendChild(videoElement);
+            });
+          })
+          .catch(error => {
+            console.error('Ocorreu um erro ao pesquisar vídeos:', error);
           });
-        })
-        .catch(error => {
-          console.error('Ocorreu um erro ao pesquisar vídeos:', error);
-        });
-    }
-  </script>
+      }
+    </script>
 </body>
 
 </html>

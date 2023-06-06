@@ -27,13 +27,14 @@
         </div>
         <ul class="nav-list">
           <li><a href="../html/index.html">Inicio</a></li>
-          <li><a href="../html/Cadastro.html">Cadastro</a></li>
           <li><a href="../html/Sobre.html">Sobre</a></li>
           <li><a href="../html/Premiun.html">Premiun</a></li>
         </ul>
       </nav>
     </div>
   </header>
+
+  <div class="background"></div>
 
   <div class="container">
     <div class="content">
@@ -46,10 +47,10 @@
       
 
       <div class="social-icons">
-        <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+        <a href="https://www.linkedin.com/in/weslley-gabriel-2b6727187/" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
         <a href="#"><i class='bx bxl-facebook-square'></i></a>
-        <a href="#"><i class='bx bxl-instagram'></i></a>
-        <a href="#"><i class='bx bxl-twitter'></i></a>
+        <a href="https://instagram.com/weslleysousaa_" target="_blank"><i class='bx bxl-instagram'></i></a>
+        <a href="https://t.me/WeslleyGabriel05" target="_blank"><i class='bx bxl-telegram' ></i></a>
       </div>
     </div>
   </div>
@@ -57,40 +58,81 @@
       <div class="logreg-box">
         <div class="form-box login">
           <form action="#">
-            <h2>Sing in</h2>
+            <h2>Login</h2>
 
             <div class="input-box">
               <span class="icon"><i class='bx bxs-envelope' ></i></span>
               <input type="email" required>
-              <label class="em">Email</label>
+              <label >E-mail</label>
             </div>
 
             <div class="input-box">
               <span class="icon"><i class='bx bxs-lock-alt' ></i></span>
               <input type="password" required>
-              <label>Password</label>
+              <label>Senha</label>
             </div>
 
             <div class="remember-forgot">
-              <label><input type="checkbox"> Remember me
+              <label><input type="checkbox"> Lembrar login
               </label>
-              <a href="#">Forgot password</a>
+              <a href="#">Esqueceu sua senha</a>
             </div>
 
-            <button type="submit" class="btn">Sing in</button>
+            <button type="submit" class="btn">Entrar</button>
 
             <div class="login-register">
-              <p>Don't have an account? <a href="#" class="register-link"> Sing up</a></p>
+              <p>Não tem uma conta? <a href="#" class="register-link"> Cadastre-se</a></p>
             </div>
 
           </form>
         </div>
+
+        <div class="form-box register">
+          <form action="#">
+            <h2>Cadastre-se</h2>
+
+            <div class="input-box">
+              <span class="icon"><i class='bx bxs-user' ></i></span>
+              <input type="text" required>
+              <label>Nome</label>
+            </div>
+
+            <div class="input-box">
+              <span class="icon"><i class='bx bxs-envelope' ></i></span>
+              <input type="email" required>
+              <label>E-mail</label>
+            </div>
+
+            <div class="input-box">
+              <span class="icon"><i class='bx bxs-lock-alt' ></i></span>
+              <input type="password" required>
+              <label>Senha</label>
+            </div>
+
+            <div class="remember-forgot">
+              <label><input type="checkbox">Aceito os termos & condições
+              </label>
+              
+            </div>
+
+            <button type="submit" class="btn">Entrar</button>
+
+            <div class="login-register">
+              <p>Já tem uma conta? <a href="#" class="login-link"> Entrar</a></p>
+            </div>
+
+          </form>
+        </div>
+      
       </div>
     </div>
   
     
 
     <script src="../mobile-navbar.js"></script>
+
+    <script src="../Form.js"></script>
+
     <script>
       const API_KEY = 'AIzaSyC2CuhUJObPDN0kaYo0vBTv0-jw47jEQjk';
 
