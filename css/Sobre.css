@@ -1,0 +1,88 @@
+*{
+    font-family:  system-ui, -apple-system, Helvetica, Arial, sans-serif;
+}
+
+h1{
+    margin-top: 0px;
+    font-weight: bolder;
+    font-size: 3vw;
+    background-color: #2c2c52;
+    border-radius: 30px;
+}
+.imagemTune{
+    width: 300px;
+}
+
+.redes{
+    border-radius: 20px;
+}
+
+
+h2{
+    font-weight: bolder;
+    
+}
+p1{
+    color: rgba(2, 42, 42, 0.469);
+}
+
+.Conteudo{
+    text-align: center;
+    padding-top: 3em;
+    height: 100vw;
+    transition: 1s;
+}
+
+.cont1{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10%;
+    font-weight: bold;
+} 
+
+.texto-p{
+    text-align: justify;
+    font-size: 22px;
+    color: #2c2c52;
+}
+
+.container{
+    text-align: justify;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 90px;
+    color: #2c2c52;
+    font-size: x-large;
+  }
+
+  .container01{
+    display: flex;
+    justify-content: space-between;
+    color: #2c2c52;
+    font-size: x-large;
+    text-align: justify;
+    margin-top: 100px;
+  }
+  
+  .container01 img{
+    border-radius: 30px;
+    box-shadow: 1px 1px 5px;
+    margin-right: 80px;
+    width: 3000px; /* Tamanho da imagem */
+    height: 400px;
+    
+  }
+
+  .container img {
+    border-radius: 30px;
+    box-shadow: 1px 1px 5px;
+    margin-left: 80px;
+    width: 510px; /* Tamanho da imagem */
+    height: 420px;
+  }
+
+  p{
+    font-size: 22px;
+  }

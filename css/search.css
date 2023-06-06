@@ -1,0 +1,13 @@
+#termoPesquisa{
+    border-radius: 20px;
+    padding: 6px;
+    border: none;
+}
+
+
+#lupa{
+    border: none;
+    background-color: #2c2c52;
+    font-size: 19px;
+    cursor: pointer;
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../img/logoRemasterizado.png">
+  <title>TuneBox Music | Inicio</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/search.css">
+  <link rel="stylesheet" href="../css/videos.css">
+  <link rel="stylesheet" href="../css/mainIndex.css">
+
+</head>
+
+<body>
+  <header>
+    <div class="fixed">
+      <nav>
+        <a class="logo" href="index.html">TuneBox</a>
+        <div>
+          <input type="text" id="termoPesquisa" placeholder="O que deseja ouvir?" />
+          <button id="lupa" onclick="realizarPesquisa()">&#x1F50D;</button>
+        </div>
+
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+          <li><a href="../html/Cadastro.html">Cadastro</a></li>
+          <li><a href="../html/Login.html">Login</a></li>
+          <li><a href="../html/Sobre.html">Sobre</a></li>
+          <li><a href="../html/Premiun.html">Premiun</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="videosContainer">
+
+    <div class="container">
+
+      <div class="centro-esquerda">
+        <h1 id="titulo-central">Ouça agora, novo álbum do Kayblack</h1>
+        <p>A música popular brasileira talvez seja o único espaço em que a luta de classes foi bem sucedida. Talvez seja
+          o único ambiente que não condiz com a estrutura racista da sociedade. E talvez seja o único lugar em que um
+          menino negro, que viu a casa sendo demolida, consegue ascender e se tornar autor e porta-voz da própria
+          história. Kayblack é uma contradição na história do Brasil.</p>
+        <a href="">
+          <button id="ouvirAgora">Ouvir agora</button></a>
+      </div>
+
+      <div class="centro-direira">
+        <iframe id="kay" src="https://www.youtube.com/embed/4B4LMfD6aeE?list=RDEMKbikyTBSkfEgKgYNNRSg7Q"
+          title="Kayblack - Vivências (Prod. Wall Hein)" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="informacao">
+      <div class="imagem-descricao">
+
+        <img src="../img/artworks-iBEj4dxURuR4fRhQ-sTUaGA-t500x500.jpg" alt="Imagem 1">
+        <p>Álbum contradições</p>
+
+      </div>
+
+
+      <div class="imagem-descricao">
+        <a href="https://www.rapdab.com.br/2023/03/31/kayblack-filipe-ret-criolo-e-karol-conka-participam-de-evento-promovido-pelo-latin-grammy/"
+          target="_blank">
+          <img src="../img/LatinGRAMMY-Mauricio-SantanaGetty-Images (2).webp" alt="Imagem 2">
+          <p>Kayblack, Filipe Ret, Criolo e Karol Conká participam de evento promovido pelo Latin GRAMMY®</p>
+        </a>
+      </div>
+
+
+
+      <div class="imagem-descricao">
+        <a href="https://www.rapdab.com.br/2023/04/04/kayblack-se-torna-o-2o-artista-mais-ouvido-do-brasil-no-spotify/#:~:text=Nesta%20segunda%2Dfeira%20(03),em%20an%C3%A1lise%20das%20estat%C3%ADsticas%20di%C3%A1rias."
+          target="_blank">
+          <img src="../img/LatinGRAMMY-Kayblack-Mauricio-SantanaGetty-Images.webp" alt="Imagem 3">
+          <p>Kayblack torna-se o 2º
+            <p> artista mais ouvido do Brasil no
+            <p> Spotify
+            </p>
+        </a>
+      </div>
+
+      <div class="spotify-Botao">
+        <a href="https://open.spotify.com/intl-pt/artist/2h5Ha0ZiMFmOQD3iYcSXsy" target="_blank">
+          <button id="ouvirAgora">Ouvir no Spotify</button>
+        </a>
+        <br>
+        <br>
+      </div>
+
+    </div>
+
+
+  </main>
+
+  <script src="../mobile-navbar.js"></script>
+  <script>
+    const API_KEY = 'AIzaSyC2CuhUJObPDN0kaYo0vBTv0-jw47jEQjk';
+
+    function realizarPesquisa() {
+      const termoPesquisa = document.getElementById('termoPesquisa').value;
+      const videosContainer = document.getElementById('videosContainer');
+
+      fetch(`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&q=${termoPesquisa}`)
+        .then(response => response.json())
+        .then(data => {
+          const videos = data.items;
+          videosContainer.innerHTML = '';
+
+          videos.forEach(video => {
+            const videoElement = document.createElement('div');
+            videoElement.classList.add('video-card');
+            videoElement.innerHTML = `
+              <h3>${video.snippet.title}</h3>
+              <p>${video.snippet.description}</p>
+              <iframe width="460" height="245" src="https://www.youtube.com/embed/${video.id.videoId}" title="${video.snippet.title}" frameborder="0" allowfullscreen></iframe>
+            `;
+
+            videosContainer.appendChild(videoElement);
+          });
+        })
+        .catch(error => {
+          console.error('Ocorreu um erro ao pesquisar vídeos:', error);
+        });
+    }
+  </script>
+</body>
+
+</html>

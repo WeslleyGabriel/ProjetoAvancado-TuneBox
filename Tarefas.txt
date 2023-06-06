@@ -1,0 +1,7 @@
+1- criar categorias
+2- fazer validação dos campos
+3- implementar vários vídeos na tela de inicio
+
+dentro do login, é preciso implementar a tela de Esqueceu sua senha
+
+fazer o album contradições na tela principal..

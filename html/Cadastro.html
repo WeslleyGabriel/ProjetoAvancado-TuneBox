@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="img/logoRemasterizado.png">
+  <title>TuneBox Music | Cadastro</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/Cadastro.css">
+</head>
+
+<body>
+  <header>
+    <div class="fixed">
+      <nav>
+        <a class="logo" href="index.html">TuneBox</a>
+      
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        
+        <ul class="nav-list">
+          <li><a href="../html/index.html">Inicio</a></li>
+          <li><a href="../html/Login.html">Login</a></li>
+          <li><a href="../html/Sobre.html">Sobre</a></li>
+          <li><a href="../html/Premiun.html">Premiun</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    v
+    v
+    <p>kas</p>
+    v
+    <p>kas</p>
+    <p>kas</p>
+
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+    v
+    v
+    <p>kas</p>
+    v
+    <p>kas</p>
+    <p>kas</p>
+
+    <p>kas</p>
+    <p>kas</p>
+    <p>kas</p>
+
+  </main>
+
+  <script src="../mobile-navbar.js"></script>
+  <script>
+    const API_KEY = 'AIzaSyC2CuhUJObPDN0kaYo0vBTv0-jw47jEQjk';
+
+    function realizarPesquisa() {
+      const termoPesquisa = document.getElementById('termoPesquisa').value;
+      const videosContainer = document.getElementById('videosContainer');
+
+      fetch(`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&q=${termoPesquisa}`)
+        .then(response => response.json())
+        .then(data => {
+          const videos = data.items;
+          videosContainer.innerHTML = '';
+
+          videos.forEach(video => {
+            const videoElement = document.createElement('div');
+            videoElement.innerHTML = `
+                <h3>${video.snippet.title}</h3>
+                <p>${video.snippet.description}</p>
+                <iframe width="460" height="245" src="https://www.youtube.com/embed/${video.id.videoId}" title="${video.snippet.title}" frameborder="0" allowfullscreen></iframe>
+              `;
+
+            videosContainer.appendChild(videoElement);
+          });
+        })
+        .catch(error => {
+          console.error('Ocorreu um erro ao pesquisar vídeos:', error);
+        });
+    }
+  </script>
+</body>
+
+</html>
