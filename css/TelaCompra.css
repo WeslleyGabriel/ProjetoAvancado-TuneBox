@@ -1,0 +1,72 @@
+
+  
+  main {
+    margin-top: 110px;
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-bottom: 90px;
+  }
+  
+  form {
+    font-size: 19px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    align-items: center;
+    text-align: center;
+    width: 40%;
+    padding-left: 400px;
+    padding-bottom: 26px;
+  }
+  
+  .purchase {
+    width: 35%;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  h2 {
+    font-size: 18px;
+    margin-top: 0;
+  }
+  
+  div {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  input[type="password"],
+  select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button[type="submit"] {
+    background-color: brown;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: rgb(72, 24, 24);
+  }
+  

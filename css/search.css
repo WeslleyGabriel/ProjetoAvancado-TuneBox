@@ -7,7 +7,7 @@
 
 #lupa{
     border: none;
-    background-color: #2c2c52;
+    background: transparent;
     font-size: 19px;
     cursor: pointer;
 }

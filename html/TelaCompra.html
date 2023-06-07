@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/logoRemasterizado.png"> 
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/TelaCompra.css">
+   
+    <title>TuneBox | Compra</title>
+</head>
+
+<body>
+    <header>
+        <div class="fixed">
+          <nav>
+            <a class="logo" href="index.html">TuneBox</a>
+    
+            <div id="videosContainer"></div>
+            <div class="mobile-menu">
+              <div class="line1"></div>
+              <div class="line2"></div>
+              <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+              <li><a href="../html/index.html">Inicio</a></li>
+              <li><a href="../html/Sobre.html">Sobre</a></li>
+             
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      
+        <form id="purchase-form">
+          
+          <div>
+            <label for="full-name">Nome Completo:</label>
+            <input type="text" id="full-name" required>
+          </div>
+          <div>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" required>
+          </div>
+          <div>
+            <label for="birthdate">Data de Nascimento:</label>
+            <input type="date" id="birthdate" required>
+          </div>
+         
+          <div>
+            <label for="city">Cidade:</label>
+            <input type="text" id="city" required>
+          </div>
+          <div>
+            <label for="state">Estado:</label>
+            <input type="text" id="state" required>
+          </div>
+          <div>
+            <label for="zip-code">CEP:</label>
+            <input type="text" id="zip-code" required>
+          </div>
+          <div>
+            <label for="street">Rua:</label>
+            <input type="text" id="street" required>
+          </div>
+          <div>
+            <label for="neighborhood">Bairro:</label>
+            <input type="text" id="neighborhood" required>
+          </div>
+          
+          <div>
+            <label for="card-data">Número do Cartão:</label>
+            <input type="text" id="card-data" required>
+          </div>
+          <div>
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" required>
+          </div>
+          <div>
+            <label for="plan">Plano:</label>
+            <select id="plan" required>
+              <option value="">Selecione um plano</option>
+              <option value="Básico">Básico R$19,⁹⁹</option>
+              <option value="Pipoca">Pipoca R$29,⁹⁹</option>
+              <option value="Balada">Balada R$39,⁹⁹</option>
+            </select>
+          </div>
+          <button type="submit">Enviar</button>
+        </form>
+     
+
+<script src="../mobile-navbar.js"></script>
+<script>
+ function fillAddressFields(zipCode) {
+  const url = `https://viacep.com.br/ws/${zipCode}/json/`;
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      if (!data.erro) {
+        document.getElementById('city').value = data.localidade;
+        document.getElementById('state').value = data.uf;
+        document.getElementById('street').value = data.logradouro;
+        document.getElementById('neighborhood').value = data.bairro;
+      }
+    })
+    .catch(error => {
+      console.error('Erro ao preencher campos de endereço:', error);
+    });
+}
+
+function validateForm(event) {
+  event.preventDefault(); // Impede o envio do formulário caso haja erros
+
+  // Obtenha os valores dos campos do formulário
+  const fullName = document.getElementById('full-name').value;
+  const email = document.getElementById('email').value;
+  const birthdate = document.getElementById('birthdate').value;
+  const zipCode = document.getElementById('zip-code').value;
+  const plan = document.getElementById('plan').value;
+
+  // Verifique se todos os campos obrigatórios estão preenchidos
+  if (!fullName || !email || !birthdate || !zipCode || !plan) {
+    alert('Por favor, preencha todos os campos obrigatórios.');
+    return;
+  }
+
+  // Verifique o formato do campo de e-mail usando uma expressão regular
+  const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  if (!email.match(emailRegex)) {
+    alert('Por favor, insira um endereço de e-mail válido.');
+    return;
+  }
+
+  // Verifique o formato do campo de data de nascimento usando uma expressão regular
+  const birthdateRegex = /^\d{4}-\d{2}-\d{2}$/;
+  if (!birthdate.match(birthdateRegex)) {
+    alert('Por favor, insira uma data de nascimento válida.');
+    return;
+  }
+
+  // Verifique se o campo de CEP contém apenas números
+  const zipCodeRegex = /^\d+$/;
+  if (!zipCode.match(zipCodeRegex)) {
+    alert('Por favor, insira um CEP válido.');
+    return;
+  }
+
+  // Realize outras validações necessárias, como formato de CPF, etc.
+
+  // Se a validação for bem-sucedida, você pode enviar o formulário ou realizar outras ações necessárias
+  document.getElementById('purchase-form').submit();
+}
+
+  // Adiciona o evento de preenchimento automático de endereço ao campo de CEP
+  document.getElementById('zip-code').addEventListener('blur', function() {
+    const zipCode = this.value;
+    fillAddressFields(zipCode);
+  });
+
+  // Adiciona o evento de validação ao formulário
+  document.getElementById('purchase-form').addEventListener('submit', validateForm);
+</script>
+
+</body>
+</html>
